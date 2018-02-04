@@ -64,7 +64,7 @@ class AuthenticationService:
         osm_user = osm_user_details.find(user_element)
 
         if osm_user is None:
-            raise AuthServiceError('User element not found in OSM response')
+            raise AuthServiceError('User element not found in OHM response')
 
         osm_id = int(osm_user.attrib['id'])
         username = osm_user.attrib['display_name']

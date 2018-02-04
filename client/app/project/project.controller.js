@@ -133,7 +133,7 @@
             vm.selectedEditor = userPreferencesService.getFavouriteEditor();
         }
 
-        // listen for navigation away from the page event and stop the autrefresh timer
+        // listen for navigation away from the page event and stop the autorefresh timer
         $scope.$on('$routeChangeStart', function () {
             if (angular.isDefined(autoRefresh)) {
                 $interval.cancel(autoRefresh);
@@ -349,7 +349,7 @@
         };
 
         /**
-         * Initilaise a project using it's id
+         * Initialise a project using it's id
          * @param id - id of the project to initialise
          */
         function initialiseProject(id) {
@@ -526,7 +526,7 @@
         }
 
         /**
-         * Updates the map and contoller data for tasks locked by current user
+         * Updates the map and controller data for tasks locked by current user
          * @param projectId
          */
         function updateLockedTasksForCurrentUser(projectId) {
@@ -650,7 +650,7 @@
          * @param aoi
          */
         function addAoiToMap(aoi) {
-            //TODO: may want to refactor this into a service at some point so that it can be resused
+            //TODO: may want to refactor this into a service at some point so that it can be reused
             var source = new ol.source.Vector();
             var vector = new ol.layer.Vector({
                 source: source,
@@ -752,7 +752,7 @@
             }, function () {
                 // task not returned successfully
                 //TODO - The following reset lines are repeated in several places in this file.
-                //Refactoring to a sinhle function call was cinsidered, however it was decided that the ability to
+                //Refactoring to a single function call was considered, however it was decided that the ability to
                 //call the resets individually was desirable and would help readability.
                 //The downside is that any change will have to be replicated in several places.
                 //A fundamental refactor of this controller should be considered at some stage.
@@ -852,7 +852,7 @@
         };
 
         /**
-         * Call api to stop mapping currebtly locked task.  Will pass the comment to api.  Will update view and map after unlock.
+         * Call api to stop mapping currently locked task.  Will pass the comment to api.  Will update view and map after unlock.
          * @param comment
          */
         vm.stopMapping = function (comment) {
@@ -1126,7 +1126,7 @@
         };
 
         /**
-         * Is the the task splittable
+         * Is the task splittable
          */
         function isTaskSplittable(taskFeatures, taskId) {
             var feature = taskService.getTaskFeatureById(taskFeatures, taskId);
@@ -1136,7 +1136,7 @@
         }
 
         /**
-         * View OSM changesets by getting the bounding box, transforming the coordinates to WGS84 and passing it to OSM
+         * View OHM changesets by getting the bounding box, transforming the coordinates to WGS84 and passing it to OHM
          */
         vm.viewOSMChangesets = function () {
             var taskId = vm.selectedTaskData.taskId;
@@ -1144,7 +1144,7 @@
             var selectedFeature = taskService.getTaskFeatureById(features, taskId);
             var bbox = selectedFeature.getGeometry().getExtent();
             var bboxTransformed = geospatialService.transformExtentToLatLonString(bbox);
-            $window.open('http://www.openstreetmap.org/history?bbox=' + bboxTransformed);
+            $window.open('http://www.openhistoricalmap.org/history?bbox=' + bboxTransformed);
         };
 
         /**
@@ -1180,7 +1180,8 @@
                 }
             }
             var query = queryPrefix + queryMiddle + querySuffix;
-            $window.open('http://overpass-turbo.eu/map.html?Q=' + encodeURIComponent(query));
+			// needs to be confirmed - OHM overpass was down when this file was modified for OHM
+            $window.open('http://overpass.openhistoricalmap.org/map.html?Q=' + encodeURIComponent(query));
         };
 
         /**
@@ -1265,7 +1266,7 @@
                     }
                 }
 
-                // load a new empty layer in josm for osm data, this step necessary to have a custom name for the layer
+                // load a new empty layer in josm for ohm data, this step necessary to have a custom name for the layer
                 // use empty, uri encoded osmxml for the data param
                 var emptyOSMLayerParams = {
                     new_layer: true,
@@ -1293,7 +1294,7 @@
                     //load OSM data and zoom to the bbox
                     editorService.sendJOSMCmd('http://127.0.0.1:8111/load_and_zoom', loadAndZoomParams);
                 } else {
-                    //probably too much OSM data to download, just zoom to the bbox
+                    //probably too much OHM data to download, just zoom to the bbox
                     editorService.sendJOSMCmd('http://127.0.0.1:8111/zoom', loadAndZoomParams);
                 }
 
@@ -1406,7 +1407,7 @@
         };
 
         /**
-         * Higlights the set of tasks on the map
+         * Highlights the set of tasks on the map
          * @param doneTaskIds - array of task ids
          */
         vm.highlightTasks = function (doneTaskIds) {

@@ -61,10 +61,10 @@
             // Get account details from account service
             getUser();
 
-            // Get OSM account details from account service
+            // Get OHM account details from account service
             var osmDetailsPromise = userService.getOSMUserDetails(vm.username);
             osmDetailsPromise.then(function (data) {
-                // On success, set the OSM account details for this user
+                // On success, set the OHM account details for this user
                 vm.osmUserDetails = data;
             })
         }
@@ -190,7 +190,8 @@
                 '<query type="way"><user name="' + vm.username + '"/><bbox-query ' + bbox + '/></query>' +
                 '<query type="relation"><user name="' + vm.username + '"/><bbox-query ' + bbox + '/></query>';
             var query = queryPrefix + queryMiddle + querySuffix;
-            $window.open('http://overpass-turbo.eu/map.html?Q=' + encodeURIComponent(query));
+			// Need to confirm this. OHM overpass was down when this file was edited
+            $window.open('http://overpass.openhistoricalmap.org/map.html?Q=' + encodeURIComponent(query));
         };
 
 

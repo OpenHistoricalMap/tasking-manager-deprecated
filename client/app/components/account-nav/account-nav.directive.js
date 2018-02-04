@@ -76,7 +76,7 @@
         }
 
         /**
-         * Login by going to OpenStreetMap
+         * Login by going to OpenHistoricalMap
          */
         vm.login = function () {
             authService.login();

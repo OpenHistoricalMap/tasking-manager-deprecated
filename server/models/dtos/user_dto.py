@@ -42,7 +42,7 @@ class UserDTO(Model):
 
 
 class UserOSMDTO(Model):
-    """ DTO containing OSM details for the user """
+    """ DTO containing OHM details for the user """
     account_created = StringType(required=True, serialized_name='accountCreated')
     changeset_count = IntType(required=True, serialized_name='changesetCount')
 

@@ -1,9 +1,9 @@
-# HOT tasking-manager
+# OHM tasking-manager
 
 ## Intro
 The app is split into a Client (AngularJS) and Server (Python) structure.  Each can be developed independently of each other.  See below for instructions on how to set up your deve environment.
 
-[See our FAQ if you hit any problems getting setup](https://github.com/hotosm/tasking-manager/wiki/Dev-Environment-FAQ)
+[See our FAQ if you hit any problems getting setup](https://github.com/OpenHistoricalMap/ohm-tasking-manager/wiki/Dev-Environment-FAQ)
 
 
 ## Client Development
@@ -58,10 +58,10 @@ Following must be available locally:
 ### Environment vars:
 As the project is open source we have to keep secrets out of the repo.  You will need to setup the following env vars locally:
 
-* **TM_DB** - This is the for the PostGIS connection string.  If you can't access an existing DB refer to DevOps page to [set up a local DB in Docker](https://github.com/hotosm/tasking-manager/wiki/Dev-Ops#creating-a-local-postgis-database-with-docker)
+* **TM_DB** - This is the for the PostGIS connection string.  If you can't access an existing DB refer to DevOps page to [set up a local DB in Docker](https://github.com/OpenHistoricalMap/ohm-tasking-manager/wiki/Dev-Ops#creating-a-local-postgis-database-with-docker)
 * **TM_SECRET** - This is secret key for the TM app used by itsdangerous and flask-oauthlib for entropy
-* **TM_CONSUMER_KEY** - This is the OAUTH Consumer Key used for authenticating the Tasking Manager App in OSM
-* **TM_CONSUMER_SECRET** - This is the OAUTH Consumer Secret used for authenticating the Tasking Manager App in OSM
+* **TM_CONSUMER_KEY** - This is the OAUTH Consumer Key used for authenticating the Tasking Manager App in OHM
+* **TM_CONSUMER_SECRET** - This is the OAUTH Consumer Secret used for authenticating the Tasking Manager App in OHM
 * **TM_SMTP_HOST** - The hostname for the SMTP server that is used to send email alerts
 * **TM_SMTP_USER** - The user for the SMTP server that is used to send email alerts
 * **TM_SMTP_PASSWORD** - The password for the SMTP server that is used to send email alerts
@@ -85,7 +85,7 @@ As the project is open source we have to keep secrets out of the repo.  You will
     * ```setx TM_SMTP_PASSWORD "smtp-server-password-here"```
 
 ### Creating the DB
-We use [Flask-Migrate](https://flask-migrate.readthedocs.io/en/latest/) to create the database from the migrations directory.  If you can't access an existing DB refer to DevOps page to [set up a local DB in Docker](https://github.com/hotosm/tasking-manager/wiki/Dev-Ops#creating-a-local-postgis-database-with-docker) Create the database as follows:
+We use [Flask-Migrate](https://flask-migrate.readthedocs.io/en/latest/) to create the database from the migrations directory.  If you can't access an existing DB refer to DevOps page to [set up a local DB in Docker](https://github.com/OpenHistoricalMap/ohm-tasking-manager/wiki/Dev-Ops#creating-a-local-postgis-database-with-docker) Create the database as follows:
 
 ```
 python manage.py db upgrade
@@ -134,4 +134,4 @@ On boot the Tasking Manager App will look for the following environment vars:
     * **Prod** - Use this for your production environment
 
 ## Localisation
-Please see the [Localisation Wiki](https://github.com/hotosm/tasking-manager/wiki/Localisation) for more details.
+Please see the [Localisation Wiki](https://github.com/OpenHistoricalMap/ohm-tasking-manager/wiki/Localisation) for more details.

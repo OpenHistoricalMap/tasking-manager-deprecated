@@ -12,7 +12,7 @@ class UserContribution(Model):
 
 
 class ProjectContributionsDTO(Model):
-    """ DTO for all user contributons on a project """
+    """ DTO for all user contributions on a project """
     def __init__(self):
         super().__init__()
         self.user_contributions = []

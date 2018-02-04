@@ -140,18 +140,18 @@ class MappingService:
     def generate_gpx(project_id: int, task_ids_str: str, timestamp=None):
         """
         Creates a GPX file for supplied tasks.  Timestamp is for unit testing only.  You can use the following URL to test locally:
-        http://www.openstreetmap.org/edit?editor=id&#map=11/31.50362930069913/34.628906243797054&comment=CHANGSET_COMMENT&gpx=http://localhost:5000/api/v1/project/111/tasks_as_gpx%3Ftasks=2
+        http://www.openhistoricalmap.org/edit?editor=id&#map=11/31.50362930069913/34.628906243797054&comment=CHANGSET_COMMENT&gpx=http://localhost:5000/api/v1/project/111/tasks_as_gpx%3Ftasks=2
         """
         if timestamp is None:
             timestamp = datetime.datetime.utcnow()
 
         root = ET.Element('gpx', attrib=dict(xmlns='http://topografix.com/GPX/1/1', version='1.1',
-                                             creator='HOT Tasking Manager'))
+                                             creator='OHM Tasking Manager'))
 
         # Create GPX Metadata element
         metadata = ET.Element('metadata')
-        link = ET.SubElement(metadata, 'link', attrib=dict(href='https://github.com/hotosm/tasking-manager'))
-        ET.SubElement(link, 'text').text = 'HOT Tasking Manager'
+        link = ET.SubElement(metadata, 'link', attrib=dict(href='https://github.com/OpenHistoricalMap/ohm-tasking-manager'))
+        ET.SubElement(link, 'text').text = 'OHM Tasking Manager'
         ET.SubElement(metadata, 'time').text = timestamp.isoformat()
         root.append(metadata)
 
@@ -190,8 +190,8 @@ class MappingService:
     def generate_osm_xml(project_id: int, task_ids_str: str) -> str:
         """ Generate xml response suitable for loading into JOSM.  A sample output file is in
             /server/helpers/testfiles/osm-sample.xml """
-        # Note XML created with upload No to ensure it will be rejected by OSM if uploaded by mistake
-        root = ET.Element('osm', attrib=dict(version='0.6', upload='never', creator='HOT Tasking Manager'))
+        # Note XML created with upload No to ensure it will be rejected by OHM if uploaded by mistake
+        root = ET.Element('osm', attrib=dict(version='0.6', upload='never', creator='OHM Tasking Manager'))
 
         if task_ids_str:
             task_ids = map(int, task_ids_str.split(','))
@@ -203,7 +203,7 @@ class MappingService:
             if not tasks or len(tasks) == 0:
                 raise NotFound()
 
-        fake_id = -1  # We use fake-ids to ensure XML will not be validated by OSM
+        fake_id = -1  # We use fake-ids to ensure XML will not be validated by OHM
         for task in tasks:
             task_geom = shape.to_shape(task.geometry)
             way = ET.SubElement(root, 'way', attrib=dict(id=str((task.id * -1)), action='modify', visible='true'))

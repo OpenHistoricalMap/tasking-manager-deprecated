@@ -51,9 +51,9 @@ class UserService:
     def register_user(osm_id, username, changeset_count):
         """
         Creates user in DB 
-        :param osm_id: Unique OSM user id
-        :param username: OSM Username
-        :param changeset_count: OSM changeset count
+        :param osm_id: Unique OHM user id
+        :param username: OHM Username
+        :param changeset_count: OHM changeset count
         """
         new_user = User()
         new_user.id = osm_id
@@ -210,7 +210,7 @@ class UserService:
     @staticmethod
     def get_osm_details_for_user(username: str) -> UserOSMDTO:
         """
-        Gets OSM details for the user from OSM API
+        Gets OHM details for the user from OHM API
         :param username: username in scope
         :raises UserServiceError, NotFound
         """

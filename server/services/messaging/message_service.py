@@ -33,7 +33,7 @@ class MessageService:
 
         welcome_message = Message()
         welcome_message.to_user_id = user.id
-        welcome_message.subject = 'Welcome to the HOT Tasking Manager'
+        welcome_message.subject = 'Welcome to the OHM Tasking Manager'
         welcome_message.message = text_template
         welcome_message.save()
 

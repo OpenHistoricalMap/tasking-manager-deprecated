@@ -1,7 +1,7 @@
 {
-  "name": "hot-tasking-manager",
+  "name": "ohm-tasking-manager",
   "version": "3.0.0",
-  "description": "App for creation and management of HOT mapping tasks",
+  "description": "App for creation and management of OHM mapping tasks",
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

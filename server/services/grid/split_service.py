@@ -52,7 +52,7 @@ class SplitService:
     @staticmethod
     def _create_square(x, y, zoom) -> geojson.MultiPolygon:
         """
-        Function for creating a geojson.MultiPolygon square representing a single OSM tile grid square
+        Function for creating a geojson.MultiPolygon square representing a single OHM tile grid square
         :param x: osm tile grid x
         :param y: osm tile grid y
         :param zoom: osm tile grid zoom level
@@ -84,7 +84,7 @@ class SplitService:
     @staticmethod
     def split_task(split_task_dto: SplitTaskDTO) -> TaskDTOs:
         """
-        Replaces a task square with 4 smaller tasks at the next OSM tile grid zoom level
+        Replaces a task square with 4 smaller tasks at the next OHM tile grid zoom level
         Validates that task is:
          - locked for mapping by current user
          - splittable (splittable property is True)

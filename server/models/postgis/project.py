@@ -32,7 +32,7 @@ active_mappers_cache = TTLCache(maxsize=1024, ttl=30)
 
 
 class Project(db.Model):
-    """ Describes a HOT Mapping Project """
+    """ Describes an OHM Mapping Project """
     __tablename__ = 'projects'
 
     # Columns
@@ -240,7 +240,7 @@ class Project(db.Model):
             return False
 
     def get_locked_tasks_for_user(self, user_id: int):
-        """ Gets tasks on project owned by specifed user id"""
+        """ Gets tasks on project owned by specified user id"""
         tasks = self.tasks.filter_by(locked_by=user_id)
 
         locked_tasks = []
@@ -250,7 +250,7 @@ class Project(db.Model):
         return locked_tasks
 
     def get_locked_tasks_details_for_user(self, user_id: int):
-        """ Gets tasks on project owned by specifed user id"""
+        """ Gets tasks on project owned by specified user id"""
         tasks = self.tasks.filter_by(locked_by=user_id)
 
         locked_tasks = []

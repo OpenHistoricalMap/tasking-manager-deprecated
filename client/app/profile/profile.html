@@ -45,28 +45,28 @@
                             <div>
                                 <h4>{{ profileCtrl.username }}'s {{ 'Progress' | translate }}</h4>
                                 <div ng-show="profileCtrl.mapperLevelIntermediate > profileCtrl.osmUserDetails.changesetCount">
-                                    <span class="label">{{ profileCtrl.mapperLevelIntermediate - profileCtrl.osmUserDetails.changesetCount }} {{ 'OSM changeset(s) to intermediate mapper' | translate }}</span>
+                                    <span class="label">{{ profileCtrl.mapperLevelIntermediate - profileCtrl.osmUserDetails.changesetCount }} {{ 'OHM changeset(s) to intermediate mapper' | translate }}</span>
                                     <uib-progressbar value="profileCtrl.osmUserDetails.changesetCount" max="profileCtrl.mapperLevelIntermediate"></uib-progressbar>
                                 </div>
                                 <div ng-show="profileCtrl.mapperLevelAdvanced > profileCtrl.osmUserDetails.changesetCount">
-                                    <span class="label">{{ profileCtrl.mapperLevelAdvanced - profileCtrl.osmUserDetails.changesetCount }} {{ 'OSM changeset(s) to advanced mapper' | translate }}</span>
+                                    <span class="label">{{ profileCtrl.mapperLevelAdvanced - profileCtrl.osmUserDetails.changesetCount }} {{ 'OHM changeset(s) to advanced mapper' | translate }}</span>
                                     <uib-progressbar value="profileCtrl.osmUserDetails.changesetCount" max="profileCtrl.mapperLevelAdvanced"></uib-progressbar>
                                 </div>
                                 <div ng-show="profileCtrl.osmUserDetails.changesetCount > profileCtrl.mapperLevelAdvanced">
-                                    <span class="label">0 {{ 'OSM changesets to advanced mapper' | translate }}</span>
+                                    <span class="label">0 {{ 'OHM changesets to advanced mapper' | translate }}</span>
                                     <uib-progressbar value="600" max="profileCtrl.mapperLevelAdvanced"></uib-progressbar>
                                 </div>
                                 <hr/>
                             </div>
                             <div>
-                                <h4>OSM details</h4>
+                                <h4>OHM details</h4>
                                 <div ng-show="profileCtrl.osmUserDetails">
-                                    <p>{{ 'Joined OSM' | translate }} <span am-time-ago="profileCtrl.osmUserDetails.accountCreated | amUtc | amLocal"></span></p>
-                                    <p>{{ profileCtrl.osmUserDetails.changesetCount}} {{ 'Total OSM changesets' | translate }}</p>
+                                    <p>{{ 'Joined OHM' | translate }} <span am-time-ago="profileCtrl.osmUserDetails.accountCreated | amUtc | amLocal"></span></p>
+                                    <p>{{ profileCtrl.osmUserDetails.changesetCount}} {{ 'Total OHM changesets' | translate }}</p>
                                 </div>
                                 <p>
                                     <a href="http://www.openstreetmap.org/user/{{ profileCtrl.username }}" target="_blank" rel="noopener">
-                                        {{ 'OSM profile' | translate }}
+                                        {{ 'OHM profile' | translate }}
                                     </a>
                                    </p>
                                 <p>
@@ -76,7 +76,7 @@
                                     </p>
                                 <p>
                                     <a href="http://www.openstreetmap.org/user/{{ profileCtrl.username }}/history" target="_blank" rel="noopener">
-                                        {{ 'OSM edit history' | translate }}
+                                        {{ 'OHM edit history' | translate }}
                                     </a>
                                 </p>
                             </div>

@@ -72,7 +72,7 @@
             getChatMessages();
         }, 10000);
 
-        // listen for navigation away from the page event and stop the autrefresh timer
+        // listen for navigation away from the page event and stop the autorefresh timer
         $scope.$on('$routeChangeStart', function () {
             if (angular.isDefined(autoRefresh)) {
                 $interval.cancel(autoRefresh);
