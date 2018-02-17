@@ -45,10 +45,10 @@
                 layers: [
                     new ol.layer.Tile({
                         source: new ol.source.OSM({
-                            url: "http://www.openhistoricalmap.org/ohm_tiles/{z}/{x}/{y}.png",
-                            attributions: "<a href='http://www.openhistoricalmap.org/copyright/' target='_blank'>© OpenHistoricalMap</a> contributors"
+                            url: "//{a-c}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png",
+                            attributions: "<a href='http://www.openstreetmap.org/copyright/' target='_blank'>© OpenStreetMap</a> contributors"
                         }),
-                        title: 'OpenHistoricalMap',
+                        title: 'OpenStreetMap',
                         type: 'base'
                     })
                 ],
@@ -90,7 +90,7 @@
         }
 
         /**
-         * Return the current OHM map
+         * Return the current OSM map
          * @returns {*}
          */
         function getOSMMap(){

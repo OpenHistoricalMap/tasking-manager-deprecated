@@ -6,7 +6,7 @@ class EnvironmentConfig:
     """ Base class for config that is shared between environments """
     DEFAULT_CHANGESET_COMMENT = '#ohm-project'
     # This is the address we'll use as the sender on all auto generated emails
-    EMAIL_FROM_ADDRESS = 'noreply@hotosmmail.org'
+    EMAIL_FROM_ADDRESS = 'openhistoricalmap@gmail.com'
     LOG_LEVEL = logging.ERROR
     # Mapper Level values represent number of OHM changesets
     MAPPER_LEVEL_INTERMEDIATE = 250
