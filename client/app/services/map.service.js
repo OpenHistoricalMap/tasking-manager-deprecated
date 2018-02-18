@@ -90,7 +90,7 @@
         }
 
         /**
-         * Return the current OSM map
+         * Return the current OHM map
          * @returns {*}
          */
         function getOSMMap(){

@@ -70,7 +70,7 @@
         }
 
          /**
-         * Get the user's OSM details
+         * Get the user's OHM details
          * @param username
          * @returns {!jQuery.jqXHR|*|!jQuery.Promise|!jQuery.deferred}
          */

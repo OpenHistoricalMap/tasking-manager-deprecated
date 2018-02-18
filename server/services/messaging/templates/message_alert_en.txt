@@ -1,8 +1,8 @@
 Hi [USERNAME]
 
-You have a new message on the OHM Tasking Manager.  Click the link below to view it.
+You have a new message on the OpenHistoricalMap Tasking Manager.  Click the link below to view it.
 
 [PROFILE_LINK]
 
 Many thanks
-OHM Mapping Team
+OpenHistoricalMap Mapping Team

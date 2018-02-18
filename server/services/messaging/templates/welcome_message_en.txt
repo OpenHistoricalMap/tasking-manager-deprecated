@@ -1,6 +1,6 @@
 Hi [USERNAME],<br />
 <br />
-Welcome to the OHM Tasking Manager, we hope you will enjoy being part of the community that is helping map the world of the past.<br />
+Welcome to the OpenHistoricalMap Tasking Manager, we hope you will enjoy being part of the community that is helping map the world of the past.<br />
 <br />
 If you would like to be alerted to project updates and feedback on your mapping, please add your email address to your profile by clicking on the link below.<br />
 <br />
